@@ -13,6 +13,7 @@
     var a = "{{patch}}";
     console.log(a);
 </script>
+
 <body>
     <div class="area"></div>
     <nav class="main-menu">
@@ -31,7 +32,7 @@
             <br>
             <br>
             <li class="has-subnav">
-                <a href="#">
+                <a href="#" style="cursor: pointer;">
                     <i class="fa fa-laptop fa-2x"></i>
                     <span class="nav-text">
                         League of Legends
@@ -115,20 +116,37 @@
     <div class="search-box">
         <input class="search" placeholder="Search champion...." /><span class="emty">&times;</span>
     </div>
-    <section>
-        <ul class="champ-list">
-            {% for o in img %}
-            <li class="champ" onclick="location.href = '/champion/?c={{o}}'">
-                <img src="https://ddragon.leagueoflegends.com/cdn/{{patch}}/img/champion/{{o}}.png" size="10x10" >
-                <p class="name {{o}}" style="margin-top: 0px;"></p>
-            </li>
-            {% endfor %}
-            <li class="champ"></li>
-            <li class="champ"></li>
-            <li class="champ"></li>
-            <li class="champ"></li>
-        </ul>
-    </section>
+    <aside>
+        <div class="ads">
+            <span>advertisement</span>
+        </div>
+        <div class="ads2">
+            <span>advertisement</span>
+        </div>
+        <div class="ads3">
+            <span>advertisement</span>
+        </div>
+    </aside>
+    <article>
+        <section>
+            <ul class="champ-list">
+                {% for o in img %}
+                <li class="champ" onclick="location.href = '/champion/?c={{o}}'">
+                    <button class="cybr-btn">
+                        <img src="https://ddragon.leagueoflegends.com/cdn/{{patch}}/img/champion/{{o}}.png"
+                            size="10x10">
+                        <span class="name {{o}} cybr-btn__glitch" style="margin-top: 0px;"></span>
+                    </button>
+                </li>
+                {% endfor %}
+                <li class="champ"></li>
+                <li class="champ"></li>
+                <li class="champ"></li>
+                <li class="champ"></li>
+            </ul>
+        </section>
+    </article>
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
