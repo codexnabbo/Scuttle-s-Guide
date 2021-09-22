@@ -356,7 +356,6 @@ article section{
     }
 }
 aside{
-    float: right;
     height: 100%;
     width: 17%;
     display: inline-block;
